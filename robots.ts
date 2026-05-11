@@ -1,21 +1,23 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  // Replace with your actual domain
-  const baseUrl = 'https://yourwebsite.com' 
+  const baseUrl = "https://careers.abhyasmitra.in";
 
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: [
-        '/dashboard',   // Prevents indexing of the application form
-        '/profile',     // Protects private user profile data
-        '/success',     // Keeps registration IDs and success messages private
-        '/api/',        // Protects backend API routes
-        '/_next/',      // Blocks internal Next.js build files
-      ],
-    },
+    rules: [
+      {
+        userAgent: "*",
+        allow: ["/", "/about", "/contact", "/privacy", "/terms", "/refund"],
+        disallow: [
+          "/dashboard",
+          "/profile",
+          "/success",
+          "/api/",
+          "/_next/",
+        ],
+      },
+    ],
     sitemap: `${baseUrl}/sitemap.xml`,
-  }
+    host: baseUrl,
+  };
 }

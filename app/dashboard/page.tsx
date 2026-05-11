@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   User, Mail, Phone, Calendar, GraduationCap, Briefcase, 
   QrCode, ClipboardCheck, AlertCircle, CheckCircle2, 
-  ChevronRight, Upload, MapPin, Send, Loader2
+  ChevronRight, Upload, MapPin, Send, Loader2, ShieldCheck
 } from "lucide-react";
 
 // --- Firebase Imports ---
@@ -72,7 +72,7 @@ export default function Dashboard() {
       if (roles.length < 2) {
         setRoles([...roles, role]);
       } else {
-        alert("Attention: Aap ek baar mein sirf 2 options select kar sakte hain.");
+        alert("You can select a maximum of 2 job roles per application.");
       }
     }
   };
@@ -212,17 +212,42 @@ export default function Dashboard() {
           </div>
 
           {/* SECTION 4: Payment Panel */}
-          <div className="bg-slate-900 rounded-[2rem] p-6 md:p-12 text-white relative overflow-hidden shadow-2xl">
-            <div className="relative z-10 flex flex-col lg:flex-row items-center gap-8">
-              <div className="flex-1 space-y-4 text-center lg:text-left">
-                <h3 className="text-2xl md:text-4xl font-extrabold leading-tight text-white">Verification Fee: ₹39</h3>
-                <p className="text-indigo-200 text-sm leading-relaxed italic">Submit UTR to verify your payment.</p>
-                <a href="https://pay.mypaylink.in?q=Axoxan" target="_blank" className="inline-flex items-center justify-center gap-2 bg-white text-slate-900 px-8 py-3 rounded-xl font-bold text-sm">
-                  Direct Pay Now <ChevronRight size={18} />
-                </a>
-              </div>
-              <div className="bg-white p-4 rounded-2xl">
-                <img src="/QR.png" alt="QR Code" className="w-32 h-32 md:w-44 h-44" />
+          <div className="rounded-[2rem] border border-slate-200 overflow-hidden shadow-sm">
+            {/* Trust Note */}
+            <div className="bg-blue-50 border-b border-blue-100 px-6 py-4 flex items-start gap-3">
+              <ShieldCheck size={18} className="text-blue-600 shrink-0 mt-0.5" />
+              <p className="text-sm text-blue-800 leading-relaxed">
+                <span className="font-bold">Why is there a processing fee?</span> To maintain a serious and efficient hiring process, we charge a small application processing fee. Due to the high volume of hiring requests we receive, this helps us prioritize genuine and committed applicants only.
+              </p>
+            </div>
+
+            <div className="bg-slate-900 p-6 md:p-10 text-white">
+              <div className="flex flex-col lg:flex-row items-center gap-8">
+                <div className="flex-1 space-y-4 text-center lg:text-left">
+                  <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-3 py-1.5 rounded-full text-xs font-bold text-white/80 uppercase tracking-wide">
+                    <ShieldCheck size={12} /> Secure Payment Gateway
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-extrabold leading-tight text-white">Application Processing Fee: ₹39</h3>
+                  <p className="text-slate-300 text-sm leading-relaxed">This one-time fee covers verification of your application and connects you with our hiring team. Pay securely below.</p>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <a
+                      href="https://pay.mypaylink.in?q=Axoxan"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-xl font-bold text-sm transition-colors shadow-lg"
+                    >
+                      Pay Securely ₹39 <ChevronRight size={16} />
+                    </a>
+                    <div className="flex items-center gap-2 text-xs text-slate-400">
+                      <AlertCircle size={14} className="text-amber-400" />
+                      Non-refundable · See Refund Policy
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white p-3 rounded-2xl shadow-xl">
+                  <img src="/QR.png" alt="UPI QR Code for ₹39 payment" className="w-36 h-36 md:w-44 md:h-44 object-contain" />
+                  <p className="text-center text-xs text-slate-500 font-semibold mt-2">Scan & Pay via UPI</p>
+                </div>
               </div>
             </div>
           </div>
