@@ -222,8 +222,6 @@ export default function HomePage() {
                 {...fadeUp(i * 0.07)}
                 className="card p-5 cursor-pointer group"
                 onClick={() => router.push("/dashboard")}
-                itemScope
-                itemType="https://schema.org/JobPosting"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center">
@@ -231,14 +229,14 @@ export default function HomePage() {
                   </div>
                   <span className={`badge border text-[10px] ${job.color}`}>{job.tag}</span>
                 </div>
-                <h3 className="font-bold text-slate-900 text-base mb-1 group-hover:text-indigo-600 transition-colors" itemProp="title">
+                <h3 className="font-bold text-slate-900 text-base mb-1 group-hover:text-indigo-600 transition-colors">
                   {job.title}
                 </h3>
-                <p className="text-xs text-slate-500 mb-3 flex items-center gap-1.5" itemProp="employmentType">
+                <p className="text-xs text-slate-500 mb-3 flex items-center gap-1.5">
                   <MapPin size={12} className="text-slate-400" />{job.type}
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-sm text-slate-800" itemProp="baseSalary">{job.pay}</span>
+                  <span className="font-bold text-sm text-slate-800">{job.pay}</span>
                   <span className="text-xs text-indigo-600 font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
                     Apply <ArrowRight size={12} />
                   </span>
@@ -326,6 +324,9 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {testimonials.map(({ name, city, role, text, rating }, i) => (
               <motion.div key={name} {...fadeUp(i * 0.1)} className="testimonial-card" itemScope itemType="https://schema.org/Review">
+                <div itemProp="itemReviewed" itemScope itemType="https://schema.org/Organization">
+                  <meta itemProp="name" content="OmegaHiring" />
+                </div>
                 <div className="flex gap-0.5 mb-4">
                   {Array.from({ length: rating }).map((_, j) => (
                     <Star key={j} size={14} className="text-amber-400 fill-amber-400" />
@@ -336,8 +337,8 @@ export default function HomePage() {
                   <div className="w-9 h-9 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold text-sm">
                     {name[0]}
                   </div>
-                  <div>
-                    <p className="text-sm font-bold text-slate-900" itemProp="author">{name}</p>
+                  <div itemProp="author" itemScope itemType="https://schema.org/Person">
+                    <p className="text-sm font-bold text-slate-900" itemProp="name">{name}</p>
                     <p className="text-xs text-slate-400">{role} · {city}</p>
                   </div>
                 </div>
@@ -373,14 +374,17 @@ export default function HomePage() {
                   {openFaq === i ? <ChevronUp size={18} className="text-indigo-600 shrink-0" /> : <ChevronDown size={18} className="text-slate-400 shrink-0" />}
                 </button>
                 {openFaq === i && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
+                  <div
                     className="faq-answer"
                     itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer"
                   >
-                    <span itemProp="text">{a}</span>
-                  </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                    >
+                      <span itemProp="text">{a}</span>
+                    </motion.div>
+                  </div>
                 )}
               </div>
             ))}
