@@ -17,7 +17,7 @@ export default function RefundPage() {
           <h1 className="text-4xl font-bold text-slate-900 mb-3">Refund Policy</h1>
           <p className="text-slate-500 text-sm">Last Updated: {lastUpdated}</p>
         </div>
-
+        {/* Key Statement */}
         {/* Key Statement */}
         <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 mb-6 flex gap-4">
           <div className="text-2xl">⚠️</div>
