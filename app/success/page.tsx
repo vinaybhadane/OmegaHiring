@@ -78,7 +78,7 @@ Apply here to start your career journey:
         {/* STATUS INFO */}
         <div className="mt-8 p-4 bg-slate-50 rounded-2xl border border-slate-100">
            <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
-            Verification is in progress. Our HR team will contact you on <span className="text-indigo-600 font-bold text-lg">WhatsApp</span> with your selection details within 24 hours.
+            Verification is in progress. Our HR team will contact you via <span className="text-indigo-600 font-bold text-lg">Email</span> with your selection details within 24 hours. Please check your spam folder if you do not receive it.
           </p>
         </div>
 
