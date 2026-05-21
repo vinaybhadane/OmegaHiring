@@ -24,8 +24,8 @@ export default function Dashboard() {
   const router = useRouter();
   
   // Auth State
-  const [currentUser, setCurrentUser] = useState<any>(null);
-  const [authLoading, setAuthLoading] = useState(true);
+  const [currentUser, setCurrentUser] = useState<any>(auth.currentUser);
+  const [authLoading, setAuthLoading] = useState(!auth.currentUser);
 
   // Form States
   const [formData, setFormData] = useState({
@@ -96,6 +96,24 @@ export default function Dashboard() {
         submittedAt: serverTimestamp(),
       };
       await addDoc(collection(db, "hiring_applications"), applicationData);
+
+      // Trigger automatic welcome email
+      try {
+        await fetch("/api/send-mail", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            toEmail: formData.email,
+            toName: formData.fullName,
+            subject: "Application Submitted Successfully - Omega Hiring",
+            text: "Dear Applicant,\n\nThank you for your interest. You have successfully submitted your application. Our team will verify your profile and get back to you with a confirmation shortly.\n\nBest Regards,\nOmega Hiring Team",
+            html: "<div style='font-family: sans-serif; padding: 20px; color: #333;'><h2>Application Received</h2><p>Dear Applicant,</p><p>Thank you for your interest in joining our team. We are writing to let you know that you have <strong>successfully submitted your application</strong>.</p><p>Our hiring team will carefully verify your profile and the details you have provided. We will get back to you with a confirmation and the next steps shortly.</p><br/><p>Best Regards,<br/><strong>Omega Hiring Team</strong></p></div>"
+          }),
+        });
+      } catch (mailError) {
+        console.error("Failed to send welcome email:", mailError);
+      }
+
       router.push("/success");
     } catch (error) {
       console.error("Submission Error:", error);

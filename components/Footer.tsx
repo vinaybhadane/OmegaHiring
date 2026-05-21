@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Briefcase, ShieldCheck, Globe, Send, Mail, Phone, ExternalLink } from "lucide-react";
 
@@ -30,7 +30,11 @@ const trustBadges = [
 ];
 
 export default function Footer() {
-  const year = new Date().getFullYear();
+  const [year, setYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   return (
     <footer className="bg-slate-900 text-slate-300" role="contentinfo">
@@ -118,7 +122,7 @@ export default function Footer() {
       {/* ── BOTTOM BAR ────────────────────────────────────── */}
       <div className="border-t border-slate-800">
         <div className="container-lg py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-          <p>© {year} OmegaHiring. All rights reserved. A platform by AbhyasMitra.</p>
+          <p>© {year || 2024} OmegaHiring. All rights reserved. A platform by AbhyasMitra.</p>
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="hover:text-indigo-400 transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-indigo-400 transition-colors">Terms</Link>
