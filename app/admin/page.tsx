@@ -47,7 +47,7 @@ export default function AdminPage() {
 
   const handleSendManualEmail = async (appId: string, email: string, name: string) => {
     if (!confirm(`Send update email to ${email}?`)) return;
-    
+
     setSendingEmailId(appId);
     try {
       const res = await fetch("/api/send-mail", {
@@ -57,8 +57,8 @@ export default function AdminPage() {
           toEmail: email,
           toName: name,
           subject: "Important Update on Your Job Application - Omega Hiring",
-          text: "Dear Applicant,\n\nWe are reaching out to provide an update on your recent job application. Our team has reviewed your profile, and we will be moving forward with the next steps of the selection process.\n\nPlease keep an eye on your inbox for further instructions.\n\nBest Regards,\nOmega Hiring Team",
-          html: "<div style='font-family: sans-serif; padding: 20px; color: #333;'><h2>Application Update</h2><p>Dear Applicant,</p><p>We are reaching out to provide an update on your recent job application with Omega Hiring.</p><p>Our team has reviewed your profile, and we will be moving forward with the next steps of the selection process. Please keep an eye on your inbox for further instructions.</p><br/><p>Best Regards,<br/><strong>Omega Hiring Team</strong></p></div>"
+          text: "Dear Applicant,\n\nWe are reaching out to provide an update on your recent job application. Our team will review your application soon, and we will be moving forward with the next steps of the selection process.\n\nPlease keep an eye on your inbox for further instructions.\n\nBest Regards,\nOmega Hiring Team",
+          html: "<div style='font-family: sans-serif; padding: 20px; color: #333;'><h2>Application Update</h2><p>Dear Applicant,</p><p>We are reaching out to provide an update on your recent job application with Omega Hiring.</p><p>Our team will review your application soon, and we will be moving forward with the next steps of the selection process. Please keep an eye on your inbox for further instructions.</p><br/><p>Best Regards,<br/><strong>Omega Hiring Team</strong></p></div>"
         }),
       });
 
