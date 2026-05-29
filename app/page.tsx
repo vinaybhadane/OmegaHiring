@@ -615,7 +615,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="stat-number text-slate-900 mb-0.5">{value}</div>
-                <div className="text-sm text-slate-500 font-medium">{label}</div>
+                <div className="text-sm text-slate-700 font-semibold">{label}</div>
               </motion.div>
             ))}
           </div>
@@ -642,7 +642,7 @@ export default function HomePage() {
               >
                 <Icon size={18} className={activeCategory === label ? "text-blue-600" : "text-slate-500"} />
                 <span className="text-xs font-semibold leading-tight">{label}</span>
-                <span className="text-[10px] text-slate-400">{count} Jobs</span>
+                <span className="text-[10px] text-slate-600 font-semibold">{count} Jobs</span>
               </button>
             ))}
           </div>
@@ -688,7 +688,7 @@ export default function HomePage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="job-card-title truncate">{job.title}</h3>
-                      <p className="text-xs text-slate-500 flex items-center gap-1 mt-0.5">
+                      <p className="text-xs text-slate-600 font-medium flex items-center gap-1 mt-0.5">
                         <Building2 size={11} /> {job.company}
                       </p>
                     </div>
@@ -705,13 +705,13 @@ export default function HomePage() {
                   <div className="flex items-center justify-between">
                     <div>
                       <span className="font-bold text-sm text-slate-800">{job.pay}</span>
-                      <p className="text-[11px] text-slate-400 mt-0.5">{job.openings} openings · {job.applicants} applied</p>
+                      <p className="text-[11px] text-slate-600 font-medium mt-0.5">{job.openings} openings · {job.applicants} applied</p>
                     </div>
                     <span className={`badge border text-[10px] ${job.tagColor}`}>{job.tag}</span>
                   </div>
 
                   <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-[11px] text-slate-400">{job.posted}</span>
+                    <span className="text-[11px] text-slate-600 font-medium">{job.posted}</span>
                     <span className="text-xs text-blue-600 font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
                       View Details <ArrowRight size={12} />
                     </span>
@@ -745,7 +745,7 @@ export default function HomePage() {
             <h2 id="why-us-heading" className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
               A Platform Built on Trust & Transparency
             </h2>
-            <p className="text-slate-500 max-w-lg mx-auto text-sm">
+            <p className="text-slate-700 max-w-lg mx-auto text-sm">
               We believe every applicant deserves a fair, safe, and professional experience when searching for remote work.
             </p>
           </div>
@@ -757,7 +757,7 @@ export default function HomePage() {
                   <Icon size={22} className="text-blue-600" />
                 </div>
                 <h3 className="font-bold text-slate-900 mb-2 text-base">{title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">{desc}</p>
+                <p className="text-sm text-slate-700 leading-relaxed">{desc}</p>
               </motion.div>
             ))}
           </div>
@@ -789,7 +789,7 @@ export default function HomePage() {
                   )}
                 </div>
                 <h3 className="font-bold text-slate-900 mb-2">{title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed max-w-[200px] mx-auto">{desc}</p>
+                <p className="text-sm text-slate-700 leading-relaxed max-w-[200px] mx-auto">{desc}</p>
               </motion.div>
             ))}
           </div>
@@ -804,7 +804,7 @@ export default function HomePage() {
             <h2 id="testimonials-heading" className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
               What Our Members Say
             </h2>
-            <p className="text-slate-500 max-w-lg mx-auto text-sm">
+            <p className="text-slate-700 max-w-lg mx-auto text-sm">
               Real experiences from professionals who found their remote careers through CareerMitra.
             </p>
           </div>
@@ -830,14 +830,14 @@ export default function HomePage() {
                     </span>
                   )}
                 </div>
-                <p className="text-sm text-slate-600 leading-relaxed mb-4 italic" itemProp="reviewBody">"{text}"</p>
+                <p className="text-sm text-slate-800 leading-relaxed mb-4 italic" itemProp="reviewBody">"{text}"</p>
                 <div className="flex items-center gap-3">
                   <div className={`w-9 h-9 rounded-full ${avatarColor} flex items-center justify-center text-white font-bold text-sm shrink-0`}>
                     {avatar}
                   </div>
                   <div itemProp="author" itemScope itemType="https://schema.org/Person">
                     <p className="text-sm font-bold text-slate-900" itemProp="name">{name}</p>
-                    <p className="text-xs text-slate-400">{role} · {city}</p>
+                    <p className="text-xs text-slate-600 font-medium">{role} · {city}</p>
                   </div>
                 </div>
               </motion.div>
@@ -854,7 +854,7 @@ export default function HomePage() {
             <h2 id="faq-heading" className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
               Frequently Asked Questions
             </h2>
-            <p className="text-slate-500 max-w-lg mx-auto text-sm">
+            <p className="text-slate-700 max-w-lg mx-auto text-sm">
               Have questions? We have answers. Contact our support team if you need more help.
             </p>
           </div>
