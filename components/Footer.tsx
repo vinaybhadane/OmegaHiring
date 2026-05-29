@@ -2,7 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Briefcase, ShieldCheck, Globe, Send, Mail, Phone, ExternalLink, MapPin } from "lucide-react";
+import {
+  Briefcase, ShieldCheck, Globe, Send, Mail, ExternalLink,
+  MapPin, Phone, Users, Star, ArrowRight, CheckCircle2
+} from "lucide-react";
 
 const footerLinks = {
   Company: [
@@ -23,10 +26,11 @@ const footerLinks = {
   ],
 };
 
-const trustBadges = [
-  { icon: ShieldCheck, label: "SSL Encrypted", sub: "AES-256 Security" },
-  { icon: Globe, label: "Pan-India Access", sub: "Work Remotely" },
-  { icon: Briefcase, label: "Verified Listings", sub: "Manually Reviewed" },
+const highlights = [
+  { icon: CheckCircle2, text: "12,000+ Verified Members" },
+  { icon: Briefcase, text: "500+ Remote Jobs Listed" },
+  { icon: MapPin, text: "All 28 States Covered" },
+  { icon: Star, text: "94% Placement Success Rate" },
 ];
 
 export default function Footer() {
@@ -37,66 +41,89 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-slate-900 text-slate-300" role="contentinfo">
+    <footer className="bg-slate-900" role="contentinfo">
 
-      {/* ── TOP STRIP ─────────────────────────────────────── */}
-      <div className="border-b border-slate-800">
-        <div className="container-lg py-8 grid grid-cols-1 md:grid-cols-3 gap-5">
-          {trustBadges.map(({ icon: Icon, label, sub }) => (
-            <div key={label} className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center shrink-0">
-                <Icon size={20} className="text-blue-400" />
+      {/* ── STATS STRIP ──────────────────────────────────────── */}
+      <div className="border-b border-slate-800 bg-slate-800/50">
+        <div className="container-lg py-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {highlights.map(({ icon: Icon, text }) => (
+              <div key={text} className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-blue-600/20 flex items-center justify-center shrink-0">
+                  <Icon size={16} className="text-blue-400" />
+                </div>
+                <p className="text-xs font-semibold text-slate-300 leading-tight">{text}</p>
               </div>
-              <div>
-                <p className="text-sm font-bold text-white">{label}</p>
-                <p className="text-xs text-slate-500">{sub}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
       {/* ── MAIN FOOTER ───────────────────────────────────── */}
       <div className="container-lg py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
 
           {/* Brand col */}
-          <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4 group" aria-label="CareerMitra">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <Briefcase size={16} className="text-white" />
+          <div className="sm:col-span-2 md:col-span-1">
+            <Link href="/" className="flex items-center gap-2.5 mb-4 group" aria-label="CareerMitra">
+              <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                <Briefcase size={18} className="text-white" />
               </div>
-              <span className="text-lg font-extrabold text-white">
+              <span className="text-xl font-extrabold text-white">
                 Career<span className="text-blue-400">Mitra</span>
               </span>
             </Link>
+
             <p className="text-sm text-slate-400 leading-relaxed mb-5">
-              India's trusted platform for verified remote jobs, work-from-home opportunities, and online internships across all states.
+              India's most trusted platform for verified remote jobs, work-from-home opportunities, and online internships. Your career starts here.
             </p>
 
-            {/* Telegram */}
+            {/* Telegram CTA */}
             <a
               href="https://t.me/omegaofts"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white px-4 py-2.5 rounded-xl text-sm font-bold transition-colors"
-              aria-label="Join our Telegram channel"
+              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-4 py-2.5 rounded-xl text-sm font-bold transition-colors shadow-md"
+              aria-label="Join CareerMitra on Telegram"
             >
-              <Send size={15} /> @careermitra
+              <Send size={14} /> Join on Telegram
             </a>
+
+            {/* Contact */}
+            <div className="mt-5 space-y-2">
+              <a
+                href="mailto:support@careers.abhyasmitra.in"
+                className="flex items-center gap-2 text-xs text-slate-500 hover:text-blue-400 transition-colors"
+              >
+                <Mail size={13} className="text-blue-500 shrink-0" />
+                support@careers.abhyasmitra.in
+              </a>
+              <a
+                href="https://t.me/omegaofts"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-xs text-slate-500 hover:text-blue-400 transition-colors"
+              >
+                <ExternalLink size={13} className="text-blue-500 shrink-0" />
+                Telegram Support Channel
+              </a>
+            </div>
           </div>
 
           {/* Link cols */}
           {Object.entries(footerLinks).map(([section, links]) => (
             <div key={section}>
-              <h3 className="text-xs font-black text-white uppercase tracking-widest mb-4">{section}</h3>
+              <h3 className="text-[11px] font-black text-slate-400 uppercase tracking-widest mb-4 pb-2 border-b border-slate-800">
+                {section}
+              </h3>
               <ul className="space-y-2.5">
                 {links.map(({ label, href }) => (
                   <li key={label}>
                     <Link
                       href={href}
-                      className="text-sm text-slate-400 hover:text-blue-400 transition-colors"
+                      className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5 group"
                     >
+                      <ArrowRight size={11} className="text-slate-600 group-hover:text-blue-400 transition-colors shrink-0" />
                       {label}
                     </Link>
                   </li>
@@ -105,28 +132,41 @@ export default function Footer() {
             </div>
           ))}
         </div>
+      </div>
 
-        {/* Contact */}
-        <div className="mt-10 pt-8 border-t border-slate-800 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
-          <a href="mailto:support@careers.abhyasmitra.in" className="flex items-center gap-2 text-sm text-slate-400 hover:text-blue-400 transition-colors">
-            <Mail size={15} className="text-blue-500" />
-            support@careers.abhyasmitra.in
-          </a>
-          <a href="https://t.me/omegaofts" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-slate-400 hover:text-blue-400 transition-colors">
-            <ExternalLink size={15} className="text-blue-500" />
-            Telegram Support
-          </a>
+      {/* ── TRUST BADGES ──────────────────────────────────── */}
+      <div className="border-t border-slate-800 bg-slate-800/30">
+        <div className="container-lg py-5">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+              {[
+                { icon: ShieldCheck, label: "SSL Encrypted" },
+                { icon: Globe, label: "Pan-India" },
+                { icon: CheckCircle2, label: "Verified Jobs" },
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-1.5 text-xs font-semibold text-slate-500">
+                  <Icon size={13} className="text-blue-500" />
+                  {label}
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-slate-600">
+              © {year || 2025} CareerMitra · A platform by AbhyasMitra
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* ── BOTTOM BAR ────────────────────────────────────── */}
-      <div className="border-t border-slate-800">
-        <div className="container-lg py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-          <p>© {year || 2025} CareerMitra. All rights reserved. A platform by AbhyasMitra.</p>
-          <div className="flex items-center gap-4">
-            <Link href="/privacy" className="hover:text-blue-400 transition-colors">Privacy</Link>
-            <Link href="/terms" className="hover:text-blue-400 transition-colors">Terms</Link>
-            <Link href="/refund" className="hover:text-blue-400 transition-colors">Refund</Link>
+      {/* ── LEGAL BOTTOM BAR ──────────────────────────────── */}
+      <div className="border-t border-slate-800/50">
+        <div className="container-lg py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-slate-600 text-center sm:text-left">
+            CareerMitra is a career portal. We do not guarantee employment outcomes. All listed jobs are independently verified.
+          </p>
+          <div className="flex items-center gap-4 shrink-0">
+            <Link href="/privacy" className="text-xs text-slate-600 hover:text-blue-400 transition-colors">Privacy</Link>
+            <Link href="/terms" className="text-xs text-slate-600 hover:text-blue-400 transition-colors">Terms</Link>
+            <Link href="/refund" className="text-xs text-slate-600 hover:text-blue-400 transition-colors">Refund</Link>
           </div>
         </div>
       </div>
