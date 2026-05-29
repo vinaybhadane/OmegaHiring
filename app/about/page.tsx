@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | OmegaHiring – Trusted Remote Career Portal",
-  description: "Learn about OmegaHiring — India's trusted platform for verified remote jobs, work-from-home opportunities, and online internships. Our mission, values, and team.",
+  title: "About Us | CareerMitra – Trusted Remote Career Portal",
+  description: "Learn about CareerMitra — India's trusted platform for verified remote jobs, work-from-home opportunities, and online internships. Our mission, values, and team.",
   alternates: { canonical: "/about" },
 };
 
@@ -14,7 +14,7 @@ export default function AboutPage() {
         {/* Header */}
         <div className="text-center mb-12">
           <span className="section-label">Our Story</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">About OmegaHiring</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">About CareerMitra</h1>
           <p className="text-slate-500 text-lg leading-relaxed">
             A verified career portal built on trust, transparency, and genuine opportunities for every Indian professional.
           </p>
@@ -24,7 +24,7 @@ export default function AboutPage() {
         <div className="card p-8 mb-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">Our Mission</h2>
           <p className="text-slate-600 leading-relaxed mb-4">
-            OmegaHiring was founded with a single goal: to make genuine remote work opportunities accessible to every Indian — whether you're a student, a fresher, or an experienced professional looking to work from home.
+            CareerMitra was founded with a single goal: to make genuine remote work opportunities accessible to every Indian — whether you're a student, a fresher, or an experienced professional looking to work from home.
           </p>
           <p className="text-slate-600 leading-relaxed">
             We saw a massive gap in the market. Hundreds of thousands of people search for online jobs every day, but many fall victim to fake listings and fraudulent platforms. We decided to build something different — a platform where every opportunity is manually verified before it goes live.
@@ -37,7 +37,7 @@ export default function AboutPage() {
           <div className="space-y-5">
             {[
               { title: "Transparency", desc: "We clearly communicate our processes, fees, and expectations. No hidden terms, no surprises." },
-              { title: "Verified Opportunities", desc: "Every job listing on OmegaHiring is manually reviewed by our team to ensure it's legitimate and fair." },
+              { title: "Verified Opportunities", desc: "Every job listing on CareerMitra is manually reviewed by our team to ensure it's legitimate and fair." },
               { title: "Privacy First", desc: "We treat your personal data with the highest respect. Your information is encrypted and never sold to third parties." },
               { title: "Inclusivity", desc: "Our platform is designed for everyone — from students and freshers to professionals seeking supplemental remote income." },
             ].map(({ title, desc }) => (
@@ -56,7 +56,7 @@ export default function AboutPage() {
         <div className="card p-8 mb-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">The Platform</h2>
           <p className="text-slate-600 leading-relaxed mb-4">
-            OmegaHiring operates under AbhyasMitra — a digital education and career services company helping students and professionals grow their careers online. Our career portal at <strong>careers.abhyasmitra.in</strong> serves as a focused hub for remote work and online job opportunities.
+            CareerMitra operates under AbhyasMitra — a digital education and career services company helping students and professionals grow their careers online. Our career portal at <strong>careers.abhyasmitra.in</strong> serves as a focused hub for remote work and online job opportunities.
           </p>
           <p className="text-slate-600 leading-relaxed">
             We specialize in remote and work-from-home roles including data entry, content writing, virtual assistance, online surveys, image editing, and more. Our application process is simple, fast, and secure.
@@ -81,7 +81,7 @@ export default function AboutPage() {
         {/* CTA */}
         <div className="bg-indigo-600 rounded-2xl p-8 text-center text-white">
           <h2 className="text-2xl font-bold mb-3">Ready to Find Your Remote Job?</h2>
-          <p className="text-indigo-100 mb-6 text-sm">Join thousands of professionals who found genuine online work through OmegaHiring.</p>
+          <p className="text-indigo-100 mb-6 text-sm">Join thousands of professionals who found genuine online work through CareerMitra.</p>
           <a href="/dashboard" className="inline-flex items-center gap-2 bg-white text-indigo-600 font-bold px-6 py-3 rounded-xl hover:bg-indigo-50 transition-colors">
             Browse Jobs Now →
           </a>

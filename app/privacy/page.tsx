@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | OmegaHiring",
-  description: "OmegaHiring's Privacy Policy — how we collect, use, and protect your personal information on our career portal.",
+  title: "Privacy Policy | CareerMitra",
+  description: "CareerMitra's Privacy Policy — how we collect, use, and protect your personal information on our career portal.",
   alternates: { canonical: "/privacy" },
   robots: { index: true, follow: true },
 };
@@ -23,12 +23,12 @@ export default function PrivacyPage() {
 
           <section>
             <h2 className="text-xl font-bold text-slate-900 mb-3">1. Introduction</h2>
-            <p>OmegaHiring ("we", "our", or "us"), operated under AbhyasMitra at careers.abhyasmitra.in, is committed to protecting your personal information. This Privacy Policy explains what data we collect, why we collect it, and how we protect it.</p>
+            <p>CareerMitra ("we", "our", or "us"), operated under AbhyasMitra at careers.abhyasmitra.in, is committed to protecting your personal information. This Privacy Policy explains what data we collect, why we collect it, and how we protect it.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold text-slate-900 mb-3">2. Information We Collect</h2>
-            <p className="mb-3">When you use OmegaHiring, we may collect the following information:</p>
+            <p className="mb-3">When you use CareerMitra, we may collect the following information:</p>
             <ul className="space-y-2 list-disc list-inside">
               <li><strong>Account Information:</strong> Name, email address, and profile photo via Google Sign-In (OAuth 2.0).</li>
               <li><strong>Application Data:</strong> Full name, phone number, city, date of birth, educational qualification, preferred job roles, and transaction reference (UTR).</li>

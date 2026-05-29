@@ -16,11 +16,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "OmegaHiring | Work From Home Jobs & Remote Opportunities in India",
-    template: "%s | OmegaHiring",
+    default: "CareerMitra | Work From Home Jobs & Remote Opportunities in India",
+    template: "%s | CareerMitra",
   },
   description:
-    "OmegaHiring is a trusted career portal offering verified work-from-home jobs, remote internships, fresher jobs, and online earning opportunities across India. Apply now and start your career journey.",
+    "CareerMitra is a trusted career portal offering verified work-from-home jobs, remote internships, fresher jobs, and online earning opportunities across India. Apply now and start your career journey.",
   keywords: [
     "work from home jobs",
     "online jobs in India",
@@ -37,11 +37,11 @@ export const metadata: Metadata = {
     "apply jobs online",
     "data entry jobs",
     "content writing jobs",
-    "OmegaHiring",
+    "CareerMitra",
   ],
-  authors: [{ name: "OmegaHiring", url: BASE_URL }],
-  creator: "OmegaHiring",
-  publisher: "OmegaHiring",
+  authors: [{ name: "CareerMitra", url: BASE_URL }],
+  creator: "CareerMitra",
+  publisher: "CareerMitra",
   category: "Jobs & Careers",
   alternates: {
     canonical: "/",
@@ -61,22 +61,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: BASE_URL,
-    siteName: "OmegaHiring",
-    title: "OmegaHiring | Verified Remote Jobs & Work From Home Opportunities",
+    siteName: "CareerMitra",
+    title: "CareerMitra | Verified Remote Jobs & Work From Home Opportunities",
     description:
-      "Find verified work-from-home jobs, remote internships, and online earning opportunities. Trusted by 10,000+ professionals across India.",
+      "Find verified work-from-home jobs, remote internships, and online earning opportunities. Trusted by 12,000+ professionals across India.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "OmegaHiring – India's Trusted Remote Career Portal",
+        alt: "CareerMitra – India's Trusted Remote Career Portal",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "OmegaHiring | Work From Home & Remote Jobs India",
+    title: "CareerMitra | Work From Home & Remote Jobs India",
     description:
       "India's trusted platform for verified remote jobs, work-from-home opportunities, and online internships.",
     images: ["/og-image.png"],
@@ -93,11 +93,11 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "OmegaHiring",
+  name: "CareerMitra",
   url: BASE_URL,
   logo: `${BASE_URL}/favicon.ico`,
   description:
-    "OmegaHiring is a verified career portal offering remote jobs, work-from-home opportunities, and online internships across India.",
+    "CareerMitra is a verified career portal offering remote jobs, work-from-home opportunities, and online internships across India.",
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Customer Support",
@@ -110,7 +110,7 @@ const organizationSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "OmegaHiring",
+  name: "CareerMitra",
   url: BASE_URL,
   potentialAction: {
     "@type": "SearchAction",

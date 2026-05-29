@@ -9,6 +9,6 @@ export function generateSEO(
   return {
     title,
     description,
-    keywords: ["jobs", "hiring", "OmegaHiring"],
+    keywords: ["jobs", "hiring", "CareerMitra"],
   };
 }

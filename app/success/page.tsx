@@ -15,7 +15,7 @@ export default function SuccessPage() {
   }, []);
 
   // 📝 Official Sharing Message
-  const message = `🚀 I just joined OmegaHiring! 
+  const message = `🚀 I just joined CareerMitra! 
 
 My Registration ID: ${regId}
 Finally found a verified platform for genuine Remote Tasks.
@@ -25,7 +25,7 @@ Finally found a verified platform for genuine Remote Tasks.
 ✅ Remote Opportunities
 
 Apply here to start your career journey: 
-👉 https://omegahiring.vercel.app`;
+👉 https://CareerMitra.vercel.app`;
 
   const copyText = () => {
     navigator.clipboard.writeText(message);
@@ -109,7 +109,7 @@ Apply here to start your career journey:
 
             {/* Telegram */}
             <a
-              href={`https://t.me/share/url?url=https://omegahiring.vercel.app&text=${encodeURIComponent(message)}`}
+              href={`https://t.me/share/url?url=https://CareerMitra.vercel.app&text=${encodeURIComponent(message)}`}
               target="_blank"
               className="flex items-center justify-center gap-2 bg-[#0088cc] text-white py-3.5 rounded-xl font-bold shadow-lg shadow-blue-100 hover:translate-y-[-2px] transition-all"
             >

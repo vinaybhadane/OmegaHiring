@@ -22,7 +22,7 @@ export default function ProfilePage() {
   const [copied, setCopied] = useState(false);
 
   // 📝 Official Sharing Message with your Vercel URL
-  const shareMessage = `🚀 I just applied at OmegaHiring! 
+  const shareMessage = `🚀 I just applied at CareerMitra! 
 
 I found a verified platform for genuine Remote Tasks like Data Entry and Content Writing. 
 
@@ -31,7 +31,7 @@ I found a verified platform for genuine Remote Tasks like Data Entry and Content
 ✅ Remote Opportunities
 
 Apply here to start your career journey: 
-👉 https://omegahiring.vercel.app`;
+👉 https://CareerMitra.vercel.app`;
 
   // 🔐 AUTH GUARD & REDIRECT
   useEffect(() => {
@@ -161,7 +161,7 @@ Apply here to start your career journey:
                 <MessageCircle size={18} /> WhatsApp
               </a>
               <a 
-                href={`https://t.me/share/url?url=https://omegahiring.vercel.app&text=${encodeURIComponent(shareMessage)}`}
+                href={`https://t.me/share/url?url=https://CareerMitra.vercel.app&text=${encodeURIComponent(shareMessage)}`}
                 target="_blank"
                 className="flex items-center justify-center gap-2 bg-[#0088cc] py-3.5 rounded-2xl font-bold text-sm hover:scale-[1.02] transition-transform shadow-lg"
               >

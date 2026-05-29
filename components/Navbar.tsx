@@ -57,12 +57,12 @@ export default function Navbar() {
       <div className="container-lg flex items-center justify-between">
 
         {/* ── BRAND ─────────────────────────────── */}
-        <Link href="/" className="flex items-center gap-2 group" aria-label="OmegaHiring Home">
-          <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center shadow-sm">
+        <Link href="/" className="flex items-center gap-2 group" aria-label="CareerMitra Home">
+          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center shadow-sm">
             <Briefcase size={16} className="text-white" />
           </div>
           <span className="text-xl font-extrabold text-slate-900 tracking-tight">
-            Omega<span className="text-indigo-600">Hiring</span>
+            Career<span className="text-blue-600">Mitra</span>
           </span>
         </Link>
 
@@ -143,6 +143,7 @@ export default function Navbar() {
               onClick={loginWithGoogle}
               className="btn-primary text-sm px-5 py-2.5"
               id="navbar-signin"
+              style={{ background: 'var(--brand-600)', boxShadow: '0 2px 8px rgba(37,99,235,0.3)' }}
             >
               Sign In Free
             </button>

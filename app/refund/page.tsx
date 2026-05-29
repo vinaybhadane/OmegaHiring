@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Refund Policy | OmegaHiring",
-  description: "OmegaHiring's Refund Policy — clear and transparent information about our application processing fee and non-refundable payment terms.",
+  title: "Refund Policy | CareerMitra",
+  description: "CareerMitra's Refund Policy — clear and transparent information about our application processing fee and non-refundable payment terms.",
   alternates: { canonical: "/refund" },
 };
 
@@ -24,7 +24,7 @@ export default function RefundPage() {
           <div>
             <h2 className="font-bold text-amber-900 mb-1">Important Notice</h2>
             <p className="text-amber-800 text-sm leading-relaxed">
-              All payments made on OmegaHiring are <strong>non-refundable</strong>. Please read this policy carefully before completing any payment.
+              All payments made on CareerMitra are <strong>non-refundable</strong>. Please read this policy carefully before completing any payment.
             </p>
           </div>
         </div>
@@ -33,7 +33,7 @@ export default function RefundPage() {
 
           <section>
             <h2 className="text-xl font-bold text-slate-900 mb-3">1. Application Processing Fee</h2>
-            <p className="mb-3">OmegaHiring charges a small application processing fee to maintain a quality hiring environment. This fee is used to:</p>
+            <p className="mb-3">CareerMitra charges a small application processing fee to maintain a quality hiring environment. This fee is used to:</p>
             <ul className="space-y-2 list-disc list-inside">
               <li>Verify the identity and seriousness of applicants</li>
               <li>Cover administrative and verification costs</li>
@@ -44,7 +44,7 @@ export default function RefundPage() {
 
           <section>
             <h2 className="text-xl font-bold text-slate-900 mb-3">2. Non-Refundable Policy</h2>
-            <p className="mb-3">The application processing fee paid on OmegaHiring is <strong>strictly non-refundable</strong> under all circumstances, including but not limited to:</p>
+            <p className="mb-3">The application processing fee paid on CareerMitra is <strong>strictly non-refundable</strong> under all circumstances, including but not limited to:</p>
             <ul className="space-y-2 list-disc list-inside">
               <li>Non-selection after application review</li>
               <li>Withdrawal of application after submission</li>
