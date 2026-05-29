@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Briefcase, User, LogOut, LayoutDashboard, ChevronDown, UserCircle, Menu, X, ShieldCheck } from "lucide-react";
 import { auth } from "@/firebase/config";
-import { loginWithGoogle } from "@/firebase/auth";
+import { loginWithGoogle, saveUserToFirestore } from "@/firebase/auth";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -23,7 +23,12 @@ export default function Navbar() {
   const router = useRouter();
 
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (u) => setUser(u));
+    const unsub = onAuthStateChanged(auth, (u) => {
+      setUser(u);
+      if (u) {
+        saveUserToFirestore(u);
+      }
+    });
     return () => unsub();
   }, []);
 

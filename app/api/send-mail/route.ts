@@ -2,48 +2,42 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
   try {
-    const { toEmail, toName, subject, html, text } = await req.json();
+    const { toEmail, toName, subject, html, text, fromEmail = "careers@abhyasmitra.in", fromName = "Omega Hiring" } = await req.json();
 
-    const apiKey = process.env.MAILJET_API_KEY;
-    const secretKey = process.env.MAILJET_SECRET_KEY;
+    const apiKey = process.env.BREVO_API_KEY;
 
-    if (!apiKey || !secretKey) {
-      return NextResponse.json({ error: "Mailjet keys not configured" }, { status: 500 });
+    if (!apiKey) {
+      return NextResponse.json({ error: "Brevo API key not configured" }, { status: 500 });
     }
 
-    const auth = Buffer.from(`${apiKey}:${secretKey}`).toString('base64');
-
-    const response = await fetch("https://api.mailjet.com/v3.1/send", {
+    const response = await fetch("https://api.brevo.com/v3/smtp/email", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Basic ${auth}`
+        "accept": "application/json",
+        "api-key": apiKey,
+        "content-type": "application/json"
       },
       body: JSON.stringify({
-        Messages: [
+        sender: {
+          name: fromName,
+          email: fromEmail
+        },
+        to: [
           {
-            From: {
-              Email: "iamrockerv@gmail.com",
-              Name: "Omega Hiring"
-            },
-            To: [
-              {
-                Email: toEmail,
-                Name: toName || ""
-              }
-            ],
-            Subject: subject,
-            TextPart: text,
-            HTMLPart: html
+            email: toEmail,
+            name: toName || ""
           }
-        ]
+        ],
+        subject: subject,
+        htmlContent: html,
+        textContent: text
       })
     });
 
     const data = await response.json();
 
     if (!response.ok) {
-      console.error("Mailjet API Error:", data);
+      console.error("Brevo API Error:", data);
       return NextResponse.json({ error: "Failed to send email", details: data }, { status: response.status });
     }
 

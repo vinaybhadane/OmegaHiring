@@ -245,16 +245,16 @@ export default function Dashboard() {
                   <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-3 py-1.5 rounded-full text-xs font-bold text-white/80 uppercase tracking-wide">
                     <ShieldCheck size={12} /> Secure Payment Gateway
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-extrabold leading-tight text-white">Application Processing Fee: ₹39</h3>
+                  <h3 className="text-2xl md:text-3xl font-extrabold leading-tight text-white" style={{ color: '#ffffff' }}>Application Processing Fee: ₹50</h3>
                   <p className="text-slate-300 text-sm leading-relaxed">This one-time fee covers verification of your application and connects you with our hiring team. Pay securely below.</p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <a
-                      href="https://pay.mypaylink.in?q=Axoxan"
+                      href="https://upi.pe/contestfees@nyes/50.00?pn=Registration+Fees"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-xl font-bold text-sm transition-colors shadow-lg"
                     >
-                      Pay Securely ₹39 <ChevronRight size={16} />
+                      Pay Securely ₹50 <ChevronRight size={16} />
                     </a>
                     <div className="flex items-center gap-2 text-xs text-slate-400">
                       <AlertCircle size={14} className="text-amber-400" />
@@ -263,7 +263,7 @@ export default function Dashboard() {
                   </div>
                 </div>
                 <div className="bg-white p-3 rounded-2xl shadow-xl">
-                  <img src="/QR.png" alt="UPI QR Code for ₹39 payment" className="w-36 h-36 md:w-44 md:h-44 object-contain" />
+                  <img src="/QR.png" alt="UPI QR Code for ₹50 payment" className="w-36 h-36 md:w-44 md:h-44 object-contain" />
                   <p className="text-center text-xs text-slate-500 font-semibold mt-2">Scan & Pay via UPI</p>
                 </div>
               </div>
