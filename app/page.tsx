@@ -501,8 +501,8 @@ export default function HomePage() {
           <div className="max-w-3xl mx-auto text-center">
             {/* badge */}
             <motion.div {...fadeUp(0)} className="mb-5 flex justify-center">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-white/10 text-white border border-white/20 backdrop-blur-sm">
-                <Flame size={12} className="text-orange-300" />
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200/60 backdrop-blur-sm shadow-sm animate-pulse">
+                <Flame size={12} className="text-orange-500" />
                 India's Fastest Growing Career Portal — 12,000+ Members
               </span>
             </motion.div>
@@ -510,14 +510,14 @@ export default function HomePage() {
             {/* headline */}
             <motion.h1
               {...fadeUp(0.1)}
-              className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.2] tracking-tight text-white mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.2] tracking-tight text-slate-900 mb-4"
             >
               Find Your Dream{" "}
-              <span className="text-orange-400">Work From Home</span>
+              <span className="text-blue-600">Work From Home</span>
               {" "}& Remote Job
             </motion.h1>
 
-            <motion.p {...fadeUp(0.2)} className="text-base text-white font-medium mb-8 max-w-xl mx-auto leading-relaxed">
+            <motion.p {...fadeUp(0.2)} className="text-base text-slate-700 font-medium mb-8 max-w-xl mx-auto leading-relaxed">
               CareerMitra connects freshers, students, and professionals with verified remote opportunities across India — data entry, writing, tutoring and more.
             </motion.p>
 
@@ -538,7 +538,7 @@ export default function HomePage() {
               <div className="flex items-center gap-1 px-1">
                 <button
                   onClick={() => router.push("/dashboard")}
-                  className="btn-accent text-sm px-6 py-3 rounded-lg"
+                  className="btn-accent text-sm px-6 py-3 rounded-lg cursor-pointer"
                   aria-label="Search jobs"
                 >
                   Search
@@ -552,7 +552,7 @@ export default function HomePage() {
                 <button
                   key={tag}
                   onClick={() => { setSearchQuery(tag); }}
-                  className="px-3 py-1.5 text-xs font-bold bg-white/15 border border-white/30 rounded-full text-white hover:bg-white/25 hover:text-white transition-all"
+                  className="px-3 py-1.5 text-xs font-bold bg-white border border-slate-200 rounded-full text-slate-700 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 transition-all shadow-sm cursor-pointer"
                 >
                   {tag}
                 </button>
@@ -562,11 +562,11 @@ export default function HomePage() {
             {/* auth CTA */}
             <motion.div {...fadeUp(0.4)} className="flex justify-center">
               {authLoading ? (
-                <Loader2 className="animate-spin text-white" size={28} />
+                <Loader2 className="animate-spin text-blue-600" size={28} />
               ) : user ? (
                 <button
                   onClick={() => router.push("/dashboard")}
-                  className="btn-accent gap-3 px-8 py-3.5 text-base rounded-xl"
+                  className="btn-accent gap-3 px-8 py-3.5 text-base rounded-xl cursor-pointer"
                 >
                   Continue Application <ArrowRight size={18} />
                 </button>
@@ -574,7 +574,7 @@ export default function HomePage() {
                 <div className="flex flex-col sm:flex-row gap-3 items-center">
                   <button
                     onClick={handleLogin}
-                    className="btn-accent gap-3 px-8 py-3.5 text-base rounded-xl"
+                    className="btn-accent gap-3 px-8 py-3.5 text-base rounded-xl cursor-pointer"
                     id="hero-google-login"
                   >
                     <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#fff" d="M24 9.5c3.5 0 6.7 1.2 9.2 3.6l6.9-6.9C35.7 2.4 30.2 0 24 0 14.7 0 6.7 5.4 2.7 13.3l8 6.2C12.5 13.4 17.8 9.5 24 9.5z"/><path fill="#fff" d="M46.5 24.5c0-1.6-.1-2.7-.4-3.9H24v7.4h12.8c-.3 1.9-1.9 4.8-5.4 6.7l8.3 6.5c4.8-4.4 7.8-10.8 7.8-16.7z"/><path fill="#fff" d="M10.7 28.5c-.5-1.5-.8-3.1-.8-4.8s.3-3.3.8-4.8l-8-6.2C1 16.3 0 20 0 24s1 7.7 2.7 11.3l8-6.8z"/><path fill="#fff" d="M24 48c6.5 0 12-2.1 16-5.8l-8.3-6.5c-2.3 1.6-5.3 2.7-7.7 2.7-6.2 0-11.5-3.9-13.4-9.4l-8 6.8C6.7 42.6 14.7 48 24 48z"/></svg>
@@ -586,11 +586,11 @@ export default function HomePage() {
 
             {/* trust row */}
             <motion.div {...fadeUp(0.5)} className="mt-8 trust-row justify-center">
-              <span className="trust-item-hero"><ShieldCheck size={15} className="text-green-300" />AES-256 Encrypted</span>
-              <span className="w-1 h-1 bg-white/30 rounded-full" />
-              <span className="trust-item-hero"><CheckCircle2 size={15} className="text-blue-200" />Verified Employers</span>
-              <span className="w-1 h-1 bg-white/30 rounded-full" />
-              <span className="trust-item-hero"><Clock size={15} className="text-orange-300" />24-hr HR Response</span>
+              <span className="trust-item-hero"><ShieldCheck size={15} className="text-emerald-600" />AES-256 Encrypted</span>
+              <span className="w-1 h-1 bg-slate-300 rounded-full" />
+              <span className="trust-item-hero"><CheckCircle2 size={15} className="text-blue-600" />Verified Employers</span>
+              <span className="w-1 h-1 bg-slate-300 rounded-full" />
+              <span className="trust-item-hero"><Clock size={15} className="text-orange-600" />24-hr HR Response</span>
             </motion.div>
           </div>
         </div>
@@ -897,25 +897,25 @@ export default function HomePage() {
       {/* ── CTA BANNER ──────────────────────────────────────── */}
       <section className="hero-gradient hero-pattern py-16 relative overflow-hidden" aria-label="Call to action">
         <div className="container-lg relative z-10 text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-white/15 text-white border border-white/30 mb-5">
-            <Zap size={12} className="text-orange-300" />Start Today — It's Free
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200/60 shadow-sm mb-5">
+            <Zap size={12} className="text-orange-500" />Start Today — It's Free
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
             Ready to Start Your Remote Career Journey?
           </h2>
-          <p className="text-white font-medium max-w-lg mx-auto mb-8 text-sm leading-relaxed">
+          <p className="text-slate-700 font-medium max-w-lg mx-auto mb-8 text-sm leading-relaxed">
             Join thousands of verified professionals who found their online jobs through CareerMitra. Apply today and get a response within 24 hours.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={user ? () => router.push("/dashboard") : handleLogin}
-              className="bg-white text-blue-700 font-bold px-8 py-3.5 rounded-xl hover:bg-blue-50 transition-all shadow-lg flex items-center gap-2 justify-center text-sm"
+              className="bg-blue-600 text-white font-bold px-8 py-3.5 rounded-xl hover:bg-blue-700 transition-all shadow-lg flex items-center gap-2 justify-center text-sm cursor-pointer"
             >
               Apply Now — It's Free <ArrowRight size={18} />
             </button>
             <a
               href="/contact"
-              className="border-2 border-white/50 bg-white/10 text-white font-bold px-8 py-3.5 rounded-xl hover:bg-white/20 transition-all flex items-center gap-2 justify-center text-sm"
+              className="border-2 border-slate-200 bg-white text-slate-700 font-bold px-8 py-3.5 rounded-xl hover:bg-slate-50 hover:border-slate-300 hover:text-slate-900 transition-all flex items-center gap-2 justify-center text-sm cursor-pointer"
             >
               <Phone size={18} /> Talk to Support
             </a>
