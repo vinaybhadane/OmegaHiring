@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
   try {
-    const { toEmail, toName, subject, html, text, fromEmail = "careers@abhyasmitra.in", fromName = "Omega Hiring" } = await req.json();
+    const { toEmail, toName, subject, html, text, fromEmail = "vinay123bhadane@gmail.com", fromName = "Omega Hiring" } = await req.json();
 
     const apiKey = process.env.BREVO_API_KEY;
 

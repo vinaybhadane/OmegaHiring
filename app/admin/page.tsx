@@ -116,10 +116,10 @@ export default function AdminPage() {
   
   <p>Best regards,<br/>
   Omega Hiring Team<br/>
-  careers@abhyasmitra.in</p>
+  vinay123bhadane@gmail.com</p>
 </div>`;
 
-  const initialEnglishText = `Hello {NAME},\n\nThank you for registering on our careers portal (careers.abhyasmitra.in).\n\nPlease complete your application profile on the dashboard to proceed:\nhttps://careers.abhyasmitra.in/dashboard\n\nFor official updates, announcements, and job alerts, please join our WhatsApp channel:\nhttps://whatsapp.com/channel/0029VbCqdnmIyPtVjKk6gQ0m\n\nIf you have already paid the fee and completed your application, please ignore this email.\n\nBest regards,\nOmega Hiring Team\ncareers@abhyasmitra.in`;
+  const initialEnglishText = `Hello {NAME},\n\nThank you for registering on our careers portal (careers.abhyasmitra.in).\n\nPlease complete your application profile on the dashboard to proceed:\nhttps://careers.abhyasmitra.in/dashboard\n\nFor official updates, announcements, and job alerts, please join our WhatsApp channel:\nhttps://whatsapp.com/channel/0029VbCqdnmIyPtVjKk6gQ0m\n\nIf you have already paid the fee and completed your application, please ignore this email.\n\nBest regards,\nOmega Hiring Team\nvinay123bhadane@gmail.com`;
 
   const [campaignHtml, setCampaignHtml] = useState(initialEnglishHtml);
   const [campaignText, setCampaignText] = useState(initialEnglishText);
@@ -255,7 +255,7 @@ export default function AdminPage() {
           subject: "Important Update on Your Job Application - Omega Hiring",
           text: `Dear ${name},\n\nWe are reaching out to provide an update on your recent job application. Our team will review your application soon, and we will be moving forward with the next steps of the selection process.\n\nPlease keep an eye on your inbox for further instructions.\n\nBest Regards,\nOmega Hiring Team`,
           html: `<div style='font-family: sans-serif; padding: 20px; color: #333;'><h2>Application Update</h2><p>Dear ${name},</p><p>We are reaching out to provide an update on your recent job application with Omega Hiring.</p><p>Our team will review your application soon, and we will be moving forward with the next steps of the selection process. Please keep an eye on your inbox for further instructions.</p><br/><p>Best Regards,<br/><strong>Omega Hiring Team</strong></p></div>`,
-          fromEmail: "careers@abhyasmitra.in"
+          fromEmail: "vinay123bhadane@gmail.com"
         }),
       });
 
@@ -363,7 +363,7 @@ export default function AdminPage() {
             subject: campaignSubject,
             text: personalizedText,
             html: personalizedHtml,
-            fromEmail: "careers@abhyasmitra.in",
+            fromEmail: "vinay123bhadane@gmail.com",
             fromName: "Omega Hiring"
           })
         });
@@ -850,7 +850,7 @@ export default function AdminPage() {
                     <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Sender Email Address</label>
                     <input 
                       type="text" 
-                      value="careers@abhyasmitra.in (Verified Default)" 
+                      value="vinay123bhadane@gmail.com (Verified Default)" 
                       readOnly 
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-100 text-slate-500 font-bold text-sm outline-none cursor-not-allowed"
                     />
