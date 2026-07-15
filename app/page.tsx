@@ -495,129 +495,271 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ── HERO (dark blue like Naukri) ────────────────────── */}
-      <section className="relative hero-gradient hero-pattern overflow-hidden pt-16">
-        <div className="container-lg relative z-10 py-16 md:py-20">
-          <div className="max-w-3xl mx-auto text-center">
-            {/* badge */}
-            <motion.div {...fadeUp(0)} className="mb-5 flex justify-center">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200/60 backdrop-blur-sm shadow-sm animate-pulse">
-                <Flame size={12} className="text-orange-500" />
-                India's Fastest Growing Career Portal — 12,000+ Members
-              </span>
-            </motion.div>
+      {/* ── HERO (modernized, two-column responsive) ─────────── */}
+      <section className="relative hero-gradient hero-pattern overflow-hidden pt-24 pb-16 md:pt-28 lg:pt-32">
+        <div className="container-lg relative z-10 py-8 lg:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Column: Headline and Search Console */}
+            <div className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left">
+              
+              {/* Badge */}
+              <motion.div {...fadeUp(0)} className="mb-6 flex justify-center lg:justify-start">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-blue-50/80 text-blue-700 border border-blue-200/60 backdrop-blur-sm shadow-sm">
+                  <Flame size={12} className="text-orange-500 animate-pulse" />
+                  India's Fastest Growing WFH Portal — 12,000+ Members
+                </span>
+              </motion.div>
 
-            {/* headline */}
-            <motion.h1
-              {...fadeUp(0.1)}
-              className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.2] tracking-tight text-slate-900 mb-4"
-            >
-              Find Your Dream{" "}
-              <span className="text-blue-600">Work From Home</span>
-              {" "}& Remote Job
-            </motion.h1>
+              {/* Headline */}
+              <motion.h1
+                {...fadeUp(0.1)}
+                className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.1] tracking-tight text-slate-900 mb-6"
+              >
+                Find Your Dream <br className="hidden sm:inline" />
+                <span className="gradient-text">Work From Home</span> & Remote Job
+              </motion.h1>
 
-            <motion.p {...fadeUp(0.2)} className="text-base text-slate-700 font-medium mb-8 max-w-xl mx-auto leading-relaxed">
-              CareerMitra connects freshers, students, and professionals with verified remote opportunities across India — data entry, writing, tutoring and more.
-            </motion.p>
+              {/* Description */}
+              <motion.p
+                {...fadeUp(0.2)}
+                className="text-base sm:text-lg text-slate-600 font-medium mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+              >
+                CareerMitra connects freshers, students, and professionals with 100% verified remote opportunities across India. Apply instantly with your Google account.
+              </motion.p>
 
-            {/* search bar */}
-            <motion.div {...fadeUp(0.3)} className="search-bar max-w-2xl mx-auto mb-5">
-              <div className="flex-1 flex items-center gap-2.5 px-4">
-                <Search className="w-5 h-5 text-slate-400 shrink-0" />
-                <input
-                  type="text"
-                  placeholder="Search jobs, skills, or roles…"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  onKeyDown={(e) => e.key === "Enter" && router.push("/dashboard")}
-                  className="flex-1 text-sm font-medium text-slate-700 placeholder:text-slate-400 bg-transparent border-none outline-none py-3"
-                  aria-label="Search jobs"
-                />
-              </div>
-              <div className="flex items-center gap-1 px-1">
-                <button
-                  onClick={() => router.push("/dashboard")}
-                  className="btn-accent text-sm px-6 py-3 rounded-lg cursor-pointer"
-                  aria-label="Search jobs"
-                >
-                  Search
-                </button>
-              </div>
-            </motion.div>
-
-            {/* popular tags */}
-            <motion.div {...fadeUp(0.35)} className="flex flex-wrap justify-center gap-2 mb-10">
-              {["Data Entry", "Content Writing", "Virtual Assistant", "Online Tutor", "Fresher Jobs"].map((tag) => (
-                <button
-                  key={tag}
-                  onClick={() => { setSearchQuery(tag); }}
-                  className="px-3 py-1.5 text-xs font-bold bg-white border border-slate-200 rounded-full text-slate-700 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 transition-all shadow-sm cursor-pointer"
-                >
-                  {tag}
-                </button>
-              ))}
-            </motion.div>
-
-            {/* auth CTA */}
-            <motion.div {...fadeUp(0.4)} className="flex justify-center">
-              {authLoading ? (
-                <Loader2 className="animate-spin text-blue-600" size={28} />
-              ) : user ? (
-                <button
-                  onClick={() => router.push("/dashboard")}
-                  className="btn-accent gap-3 px-8 py-3.5 text-base rounded-xl cursor-pointer"
-                >
-                  Continue Application <ArrowRight size={18} />
-                </button>
-              ) : (
-                <div className="flex flex-col sm:flex-row gap-3 items-center">
+              {/* Search Console */}
+              <motion.div {...fadeUp(0.3)} className="search-console p-2 max-w-2xl w-full mb-6">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+                  <div className="flex-1 flex items-center gap-2.5 px-3 min-w-0">
+                    <Search className="w-5 h-5 text-blue-500 shrink-0" />
+                    <input
+                      type="text"
+                      placeholder="Search jobs, skills, or roles…"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      onKeyDown={(e) => e.key === "Enter" && router.push("/dashboard")}
+                      className="w-full text-sm font-semibold text-slate-800 placeholder:text-slate-400 bg-transparent border-none outline-none py-3"
+                      aria-label="Search jobs"
+                    />
+                  </div>
+                  
+                  <div className="hidden sm:block w-px h-8 bg-slate-200 shrink-0" />
+                  
+                  <div className="hidden sm:flex items-center gap-2 px-3 shrink-0">
+                    <Briefcase className="w-4 h-4 text-slate-400" />
+                    <select
+                      value={activeCategory}
+                      onChange={(e) => setActiveCategory(e.target.value)}
+                      className="text-xs font-bold text-slate-600 bg-transparent border-none outline-none cursor-pointer pr-4 py-2"
+                      aria-label="Filter by category"
+                    >
+                      <option value="All">All Categories</option>
+                      {categories.map((c) => (
+                        <option key={c.label} value={c.label}>{c.label}</option>
+                      ))}
+                    </select>
+                  </div>
+                  
                   <button
-                    onClick={handleLogin}
-                    className="btn-accent gap-3 px-8 py-3.5 text-base rounded-xl cursor-pointer"
-                    id="hero-google-login"
+                    onClick={() => router.push("/dashboard")}
+                    className="btn-primary text-sm px-6 py-3 rounded-xl shrink-0 cursor-pointer shadow-md shadow-blue-500/20"
+                    style={{ background: 'var(--brand-600)' }}
+                    aria-label="Search jobs"
                   >
-                    <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#fff" d="M24 9.5c3.5 0 6.7 1.2 9.2 3.6l6.9-6.9C35.7 2.4 30.2 0 24 0 14.7 0 6.7 5.4 2.7 13.3l8 6.2C12.5 13.4 17.8 9.5 24 9.5z"/><path fill="#fff" d="M46.5 24.5c0-1.6-.1-2.7-.4-3.9H24v7.4h12.8c-.3 1.9-1.9 4.8-5.4 6.7l8.3 6.5c4.8-4.4 7.8-10.8 7.8-16.7z"/><path fill="#fff" d="M10.7 28.5c-.5-1.5-.8-3.1-.8-4.8s.3-3.3.8-4.8l-8-6.2C1 16.3 0 20 0 24s1 7.7 2.7 11.3l8-6.8z"/><path fill="#fff" d="M24 48c6.5 0 12-2.1 16-5.8l-8.3-6.5c-2.3 1.6-5.3 2.7-7.7 2.7-6.2 0-11.5-3.9-13.4-9.4l-8 6.8C6.7 42.6 14.7 48 24 48z"/></svg>
-                    Sign In & Apply Free
+                    Find Jobs
                   </button>
                 </div>
-              )}
-            </motion.div>
+              </motion.div>
 
-            {/* trust row */}
-            <motion.div {...fadeUp(0.5)} className="mt-8 trust-row justify-center">
-              <span className="trust-item-hero"><ShieldCheck size={15} className="text-emerald-600" />AES-256 Encrypted</span>
-              <span className="w-1 h-1 bg-slate-300 rounded-full" />
-              <span className="trust-item-hero"><CheckCircle2 size={15} className="text-blue-600" />Verified Employers</span>
-              <span className="w-1 h-1 bg-slate-300 rounded-full" />
-              <span className="trust-item-hero"><Clock size={15} className="text-orange-600" />24-hr HR Response</span>
-            </motion.div>
+              {/* Popular Tags */}
+              <motion.div {...fadeUp(0.35)} className="flex flex-wrap gap-2 mb-8 justify-center lg:justify-start">
+                <span className="text-xs text-slate-400 font-bold self-center mr-1">Popular:</span>
+                {["Data Entry", "Content Writing", "Virtual Assistant", "Online Tutor"].map((tag) => (
+                  <button
+                    key={tag}
+                    onClick={() => { setSearchQuery(tag); }}
+                    className="px-3.5 py-1.5 text-xs font-bold bg-white/70 backdrop-blur-sm border border-slate-200 rounded-full text-slate-700 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 transition-all shadow-sm cursor-pointer"
+                  >
+                    {tag}
+                  </button>
+                ))}
+              </motion.div>
+
+              {/* Action Buttons */}
+              <motion.div {...fadeUp(0.4)} className="flex justify-center lg:justify-start">
+                {authLoading ? (
+                  <Loader2 className="animate-spin text-blue-600" size={28} />
+                ) : user ? (
+                  <button
+                    onClick={() => router.push("/dashboard")}
+                    className="btn-accent gap-3 px-8 py-4 text-base rounded-xl cursor-pointer shadow-lg shadow-orange-500/20"
+                  >
+                    Continue Application <ArrowRight size={18} />
+                  </button>
+                ) : (
+                  <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto items-center">
+                    <button
+                      onClick={handleLogin}
+                      className="w-full sm:w-auto btn-primary gap-3 px-8 py-4 text-base rounded-xl cursor-pointer shadow-lg shadow-blue-500/25"
+                      id="hero-google-login"
+                    >
+                      <svg width="18" height="18" viewBox="0 0 48 48">
+                        <path fill="#fff" d="M24 9.5c3.5 0 6.7 1.2 9.2 3.6l6.9-6.9C35.7 2.4 30.2 0 24 0 14.7 0 6.7 5.4 2.7 13.3l8 6.2C12.5 13.4 17.8 9.5 24 9.5z"/>
+                        <path fill="#fff" d="M46.5 24.5c0-1.6-.1-2.7-.4-3.9H24v7.4h12.8c-.3 1.9-1.9 4.8-5.4 6.7l8.3 6.5c4.8-4.4 7.8-10.8 7.8-16.7z"/>
+                        <path fill="#fff" d="M10.7 28.5c-.5-1.5-.8-3.1-.8-4.8s.3-3.3.8-4.8l-8-6.2C1 16.3 0 20 0 24s1 7.7 2.7 11.3l8-6.8z"/>
+                        <path fill="#fff" d="M24 48c6.5 0 12-2.1 16-5.8l-8.3-6.5c-2.3 1.6-5.3 2.7-7.7 2.7-6.2 0-11.5-3.9-13.4-9.4l-8 6.8C6.7 42.6 14.7 48 24 48z"/>
+                      </svg>
+                      Sign In & Apply Free
+                    </button>
+                  </div>
+                )}
+              </motion.div>
+
+              {/* Trust Indicators */}
+              <motion.div {...fadeUp(0.5)} className="mt-8 trust-row justify-center lg:justify-start">
+                <span className="trust-item-hero text-slate-500"><ShieldCheck size={16} className="text-emerald-500" /> AES-256 Encrypted</span>
+                <span className="w-1.5 h-1.5 bg-slate-300 rounded-full hidden sm:inline" />
+                <span className="trust-item-hero text-slate-500"><CheckCircle2 size={16} className="text-blue-500" /> Verified WFH Jobs</span>
+                <span className="w-1.5 h-1.5 bg-slate-300 rounded-full hidden sm:inline" />
+                <span className="trust-item-hero text-slate-500"><Clock size={16} className="text-orange-500" /> 24h HR Response</span>
+              </motion.div>
+
+            </div>
+
+            {/* Right Column: Interactive Mockup Visuals (Desktop Only) */}
+            <div className="lg:col-span-5 relative min-h-[440px] items-center justify-center hidden lg:flex">
+              {/* Background glows */}
+              <div className="absolute -top-10 -left-10 w-72 h-72 rounded-full blob-indigo opacity-70 z-0 animate-float-slow" />
+              <div className="absolute -bottom-10 -right-10 w-80 h-80 rounded-full blob-blue opacity-60 z-0 animate-float-medium" />
+              
+              {/* Visual playground layout */}
+              <div className="relative w-full h-full flex items-center justify-center">
+                
+                {/* Floating Card 1: Direct HR Connect (WhatsApp notifications) */}
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  className="absolute z-20 top-6 left-6 right-6 bg-white/90 backdrop-blur-md border border-emerald-100 p-4 rounded-2xl shadow-lg shadow-emerald-500/5 max-w-[320px]"
+                  style={{
+                    boxShadow: "0 10px 30px rgba(16, 185, 129, 0.08)",
+                  }}
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-white shrink-0 shadow-md shadow-emerald-500/25">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.324 5.328 0 11.859 0c3.161.001 6.136 1.233 8.375 3.474 2.238 2.24 3.467 5.218 3.465 8.384-.003 6.536-5.328 11.86-11.859 11.86-2.002-.001-3.973-.51-5.729-1.479L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.725 1.45 5.389 0 9.772-4.385 9.774-9.778.001-2.612-1.015-5.068-2.862-6.918a9.67 9.67 0 0 0-6.91-2.858c-5.39 0-9.774 4.385-9.776 9.779-.001 1.637.454 3.235 1.311 4.64L1.87 20.31l4.777-1.156z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-xs font-bold text-slate-800">HR Executive (Direct Connect)</span>
+                        <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping" />
+                      </div>
+                      <p className="text-[10px] text-slate-400 font-semibold mb-2">WhatsApp Notification</p>
+                      <div className="bg-slate-50 p-2 rounded-xl border border-slate-100">
+                        <p className="text-[11px] text-slate-600 font-medium leading-relaxed">
+                          "Hi Rohan, we saw your application for the <b>Virtual Assistant</b> role. Let's schedule a brief chat tomorrow!"
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Floating Card 2: Application Tracking (Central & Interactive) */}
+                <motion.div
+                  animate={{ y: [0, 8, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+                  className="absolute z-30 bottom-4 right-2 bg-white/95 backdrop-blur-md border border-blue-100 p-5 rounded-2xl shadow-xl shadow-blue-500/5 w-full max-w-[300px]"
+                  style={{
+                    boxShadow: "0 20px 40px rgba(37, 99, 235, 0.08)",
+                  }}
+                >
+                  <div className="flex items-center justify-between mb-4 pb-2 border-b border-slate-50">
+                    <div>
+                      <h4 className="text-xs font-bold text-slate-900">Application Verified</h4>
+                      <p className="text-[9px] text-slate-400 font-semibold">Track Status in Realtime</p>
+                    </div>
+                    <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">Active</span>
+                  </div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
+                      <PenLine size={16} className="text-blue-600" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-slate-800 leading-tight">Content Writer</p>
+                      <p className="text-[10px] text-slate-600 font-medium">Wordcraft Media</p>
+                    </div>
+                  </div>
+                  
+                  {/* Tracking Steps */}
+                  <div className="flex items-center justify-between gap-1 mt-2">
+                    {[
+                      { label: "Applied", active: true },
+                      { label: "Reviewed", active: true },
+                      { label: "Selected", active: true, success: true }
+                    ].map((step, idx) => (
+                      <div key={idx} className="flex flex-col items-center gap-1.5 flex-1">
+                        <div className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold ${
+                          step.success 
+                            ? "bg-emerald-500 text-white shadow-sm shadow-emerald-500/30" 
+                            : "bg-blue-600 text-white shadow-sm shadow-blue-600/30"
+                        }`}>
+                          ✓
+                        </div>
+                        <span className="text-[9px] font-bold text-slate-500">{step.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                {/* Floating Card 3: Floating Stats Badge */}
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+                  className="absolute z-40 top-44 -left-6 bg-white/95 backdrop-blur-md border border-amber-100 p-3 rounded-xl shadow-lg shadow-amber-500/5 flex items-center gap-3 max-w-[190px]"
+                  style={{
+                    boxShadow: "0 10px 25px rgba(245, 158, 11, 0.06)",
+                  }}
+                >
+                  <div className="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center shrink-0">
+                    <Award size={18} className="text-amber-500" />
+                  </div>
+                  <div>
+                    <p className="text-[9px] font-bold text-slate-400 leading-tight uppercase tracking-wider">Salary Payout</p>
+                    <p className="text-sm font-bold text-slate-900 leading-tight mt-0.5">₹15,000–40,000</p>
+                  </div>
+                </motion.div>
+
+              </div>
+            </div>
+
           </div>
         </div>
 
         {/* Bottom wave */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className="absolute bottom-0 left-0 right-0 z-10">
+          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
             <path d="M0 60V30C360 0 720 60 1080 30 1260 15 1380 0 1440 0V60H0Z" fill="white"/>
           </svg>
         </div>
       </section>
 
-      {/* ── STATS ─────────────────────────────────────────── */}
-      <section className="bg-white py-10 border-b border-slate-100" aria-label="Platform statistics">
-        <div className="container-lg">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map(({ label, value, icon: Icon }, i) => (
-              <motion.div key={label} {...fadeUp(i * 0.1)} className="text-center">
-                <div className="flex justify-center mb-2">
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
+      {/* ── STATS (overlapping glassmorphic deck) ───────────── */}
+      <section className="relative z-20 -mt-10 sm:-mt-12 px-4" aria-label="Platform statistics">
+        <div className="container-lg max-w-5xl">
+          <div className="glass-deck rounded-3xl p-6 sm:p-8 border border-blue-100/50 shadow-xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+              {stats.map(({ label, value, icon: Icon }, i) => (
+                <motion.div key={label} {...fadeUp(i * 0.08)} className="text-center flex flex-col items-center">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-3 border border-blue-100/40">
                     <Icon size={20} className="text-blue-600" />
                   </div>
-                </div>
-                <div className="stat-number text-slate-900 mb-0.5">{value}</div>
-                <div className="text-sm text-slate-700 font-semibold">{label}</div>
-              </motion.div>
-            ))}
+                  <div className="stat-number text-slate-900 mb-0.5 text-2xl font-black">{value}</div>
+                  <div className="text-[11px] sm:text-xs text-slate-500 font-bold uppercase tracking-wider">{label}</div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -773,23 +915,30 @@ export default function HomePage() {
               Start Your Remote Career in 3 Steps
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               { step: "01", title: "Create Free Account", desc: "Sign in with your Google account in seconds. No lengthy registration required.", icon: Users },
               { step: "02", title: "Fill Your Application", desc: "Choose your preferred job roles and complete your application with basic details.", icon: FileText },
               { step: "03", title: "Get Selected by HR", desc: "Our HR team reviews applications and contacts shortlisted candidates via WhatsApp within 24 hours.", icon: CheckCircle2 },
             ].map(({ step, title, desc, icon: Icon }, i) => (
-              <motion.div key={step} {...fadeUp(i * 0.1)} className="text-center relative">
-                <div className="relative inline-block mb-5">
-                  <div className="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-blue-200">
-                    <span className="text-lg font-black">{step}</span>
-                  </div>
-                  {i < 2 && (
-                    <div className="hidden md:block absolute top-8 left-full w-[calc(100vw/3-4rem)] h-0.5 bg-blue-100" style={{ width: "100px", left: "100%" }} />
-                  )}
+              <motion.div
+                key={step}
+                {...fadeUp(i * 0.1)}
+                className="card p-6 sm:p-8 text-center relative flex flex-col items-center overflow-hidden"
+              >
+                {/* Visual Step number background */}
+                <div className="absolute top-2 right-4 text-[4rem] font-black text-slate-100/70 select-none pointer-events-none font-sans">
+                  {step}
                 </div>
-                <h3 className="font-bold text-slate-900 mb-2">{title}</h3>
-                <p className="text-sm text-slate-700 leading-relaxed max-w-[200px] mx-auto">{desc}</p>
+                
+                {/* Icon wrapper */}
+                <div className="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/20 mb-5 relative z-10">
+                  <Icon size={24} />
+                </div>
+                
+                {/* Text content */}
+                <h3 className="font-bold text-slate-900 mb-3 text-base relative z-10">{title}</h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed relative z-10">{desc}</p>
               </motion.div>
             ))}
           </div>
@@ -894,28 +1043,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CTA BANNER ──────────────────────────────────────── */}
-      <section className="hero-gradient hero-pattern py-16 relative overflow-hidden" aria-label="Call to action">
+      {/* ── CTA BANNER (modernized, dark-glow theme) ────────── */}
+      <section className="relative overflow-hidden py-20 bg-slate-950 text-white border-t border-slate-900" aria-label="Call to action">
+        {/* Decorative glowing blobs */}
+        <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full blob-indigo opacity-30 pointer-events-none" />
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full blob-blue opacity-35 pointer-events-none" />
+        
         <div className="container-lg relative z-10 text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200/60 shadow-sm mb-5">
-            <Zap size={12} className="text-orange-500" />Start Today — It's Free
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20 shadow-sm mb-6">
+            <Zap size={12} className="text-amber-400" /> Start Today — It's Free
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 tracking-tight">
             Ready to Start Your Remote Career Journey?
           </h2>
-          <p className="text-slate-700 font-medium max-w-lg mx-auto mb-8 text-sm leading-relaxed">
+          <p className="text-slate-400 font-medium max-w-xl mx-auto mb-10 text-sm sm:text-base leading-relaxed">
             Join thousands of verified professionals who found their online jobs through CareerMitra. Apply today and get a response within 24 hours.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto sm:max-w-none">
             <button
               onClick={user ? () => router.push("/dashboard") : handleLogin}
-              className="bg-blue-600 text-white font-bold px-8 py-3.5 rounded-xl hover:bg-blue-700 transition-all shadow-lg flex items-center gap-2 justify-center text-sm cursor-pointer"
+              className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl hover:scale-102 active:scale-98 transition-all shadow-lg shadow-blue-600/20 flex items-center gap-2.5 justify-center text-sm cursor-pointer"
             >
               Apply Now — It's Free <ArrowRight size={18} />
             </button>
             <a
               href="/contact"
-              className="border-2 border-slate-200 bg-white text-slate-700 font-bold px-8 py-3.5 rounded-xl hover:bg-slate-50 hover:border-slate-300 hover:text-slate-900 transition-all flex items-center gap-2 justify-center text-sm cursor-pointer"
+              className="w-full sm:w-auto border border-slate-700 bg-slate-900/60 hover:bg-slate-800 text-slate-300 font-bold px-8 py-4 rounded-xl hover:scale-102 active:scale-98 transition-all flex items-center gap-2.5 justify-center text-sm cursor-pointer"
             >
               <Phone size={18} /> Talk to Support
             </a>
